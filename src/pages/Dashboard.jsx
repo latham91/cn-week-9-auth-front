@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import Container from "../components/Container";
+import { useEffect } from "react";
 
 export default function Dashboard({ user }) {
     const navigate = useNavigate();
 
-    if (!user) {
-        return navigate("/login");
-    }
+    useEffect(() => {
+        if (!user) {
+            navigate("/signin");
+        }
+    }, [user, navigate]);
 
     return (
         <main className="py-10">

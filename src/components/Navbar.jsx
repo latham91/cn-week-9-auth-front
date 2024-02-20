@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import Container from "./Container";
+import { Link } from "react-router-dom";
 
 export default function Navbar({ user, handleSignout }) {
     return (
         <header className="py-5 bg-slate-800 text-neutral-100">
             <Container>
                 <nav className="flex items-center justify-between">
-                    <div className="text-3xl font-extrabold">Auth</div>
+                    <div className="text-3xl font-extrabold">Basic Auth</div>
                     <div>
                         {user ? (
                             <div className="flex items-center gap-5">
@@ -16,7 +17,9 @@ export default function Navbar({ user, handleSignout }) {
                                 </button>
                             </div>
                         ) : (
-                            <button className="btn-primary">Sign in</button>
+                            <Link to="/signin">
+                                <button className="btn-primary">Sign in</button>
+                            </Link>
                         )}
                     </div>
                 </nav>

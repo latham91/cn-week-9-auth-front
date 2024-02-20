@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import Container from "../components/Container";
+import { Link } from "react-router-dom";
 
 export default function Signin({ handleSignin, errorMessage, loading }) {
     const [credentials, setCredentials] = useState({
@@ -13,6 +14,7 @@ export default function Signin({ handleSignin, errorMessage, loading }) {
             <Container>
                 <div className="flex flex-col items-center justify-center w-2/5 py-10 mx-auto">
                     <h1 className="text-3xl font-extrabold">Sign in to your account</h1>
+                    <p>Enter your details below to sign in</p>
                     <form onSubmit={(e) => handleSignin(e, credentials)} className="flex flex-col w-full gap-3 py-5">
                         <div className="flex flex-col gap-1">
                             <label id="email" name="email">
@@ -44,6 +46,12 @@ export default function Signin({ handleSignin, errorMessage, loading }) {
                         <button type="submit" className="btn-secondary" disabled={loading}>
                             {loading ? "Signing in..." : "Sign in"}
                         </button>
+                        <span>
+                            Already have an account?{" "}
+                            <Link to="/signup" className="text-blue-500 hover:underline">
+                                Sign up
+                            </Link>
+                        </span>
                     </form>
                 </div>
             </Container>
