@@ -43,11 +43,13 @@ export default function App() {
         const data = await signUpFetch(credentials);
 
         if (!data.success) {
+            console.log(data);
             setErrorMessage(data.message);
             setLoading(false);
             setTimeout(() => {
                 setErrorMessage("");
             }, 3000);
+            return;
         }
 
         setLoading(false);
