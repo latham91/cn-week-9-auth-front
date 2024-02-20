@@ -34,7 +34,7 @@ export default function SignupForm({ handleSignup, errorMessage, loading }) {
                     name="username"
                     id="username"
                     placeholder="johndoe"
-                    className="p-1 border rounded-md border-zinc-800"
+                    className="p-1 border rounded-md border-zinc-800 outline-slate-800"
                 />
             </div>
 
@@ -48,7 +48,7 @@ export default function SignupForm({ handleSignup, errorMessage, loading }) {
                     name="email"
                     id="email"
                     placeholder="example@mail.com"
-                    className="p-1 border rounded-md border-zinc-800"
+                    className="p-1 border rounded-md border-zinc-800 outline-slate-800"
                 />
             </div>
 
@@ -59,7 +59,7 @@ export default function SignupForm({ handleSignup, errorMessage, loading }) {
                 <input
                     ref={passwordRef}
                     onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-                    className="p-1 border rounded-md border-zinc-800"
+                    className="p-1 border rounded-md border-zinc-800 outline-slate-800"
                     type="password"
                     name="password"
                     id="password"

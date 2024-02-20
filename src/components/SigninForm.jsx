@@ -20,6 +20,7 @@ export default function SigninForm({ handleSignin, errorMessage, loading }) {
             passwordRef.current.type = "password";
         }
     };
+
     return (
         <form onSubmit={(e) => handleSignin(e, credentials)} className="flex flex-col w-full gap-3 py-5">
             <div className="flex flex-col gap-1">
@@ -32,7 +33,7 @@ export default function SigninForm({ handleSignin, errorMessage, loading }) {
                     name="email"
                     id="email"
                     placeholder="example@mail.com"
-                    className="p-1 border rounded-md border-zinc-800"
+                    className="p-1 border rounded-md border-zinc-800 outline-slate-800"
                 />
             </div>
 
@@ -43,7 +44,7 @@ export default function SigninForm({ handleSignin, errorMessage, loading }) {
                 <input
                     ref={passwordRef}
                     onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-                    className="p-1 border rounded-md border-zinc-800"
+                    className="p-1 border rounded-md border-zinc-800 outline-slate-800"
                     type="password"
                     name="password"
                     id="password"
