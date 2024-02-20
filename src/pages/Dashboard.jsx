@@ -8,8 +8,10 @@ export default function Dashboard({ user }) {
 
     useEffect(() => {
         if (!user) {
+            console.log("no user: ", user);
             navigate("/signin");
         }
+        console.log("with user: ", user);
     }, [user, navigate]);
 
     return (

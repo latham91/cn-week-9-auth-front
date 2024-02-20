@@ -5,9 +5,9 @@ import Navbar from "./components/Navbar";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Cookies from "universal-cookie";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signUpFetch, signInFetch } from "./utils/useAuth";
+import { signUpFetch, signInFetch, verifyUser } from "./utils/useAuth";
 
 export default function App() {
     const navigate = useNavigate();
@@ -15,6 +15,22 @@ export default function App() {
     const [user, setUser] = useState(null);
     const [errorMessage, setErrorMessage] = useState("");
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            const data = await verifyUser();
+
+            if (!data.success) {
+                navigate("/signin");
+                return;
+            }
+
+            setUser(data.user);
+            navigate("/");
+        };
+
+        fetchUser();
+    }, [navigate]);
 
     const handleSignin = async (e, credentials) => {
         e.preventDefault();

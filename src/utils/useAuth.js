@@ -33,3 +33,23 @@ export const signInFetch = async (credentials) => {
         return error;
     }
 };
+
+export const verifyUser = async () => {
+    try {
+        const response = await fetch("http://localhost:5001/users/verify", {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "http://localhost:5001",
+            },
+            credentials: "include",
+        });
+
+        const data = await response.json();
+
+        return data;
+    } catch (error) {
+        return error;
+    }
+};
