@@ -17,6 +17,7 @@ export default function App() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        // For persistant user login, sends request to backend to verify jwt token
         const fetchUser = async () => {
             const data = await verifyUser();
 

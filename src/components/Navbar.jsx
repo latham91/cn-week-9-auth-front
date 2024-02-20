@@ -7,7 +7,9 @@ export default function Navbar({ user, handleSignout }) {
         <header className="py-5 bg-slate-800 text-neutral-100">
             <Container>
                 <nav className="flex items-center justify-between">
-                    <div className="text-3xl font-extrabold">Basic Auth</div>
+                    <Link to="/">
+                        <div className="text-3xl font-extrabold">Basic Auth</div>
+                    </Link>
                     <div>
                         {user ? (
                             <div className="flex items-center gap-5">
