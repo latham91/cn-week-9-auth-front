@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { signUpFetch, signInFetch, verifyUser } from "./utils/useAuth";
 import Books from "./pages/Books";
 import Account from "./pages/Account";
+import { deleteUser } from "./utils/fetchUsers";
 
 export default function App() {
     const navigate = useNavigate();
@@ -79,6 +80,18 @@ export default function App() {
         navigate("/");
     };
 
+    const handleDeleteAccount = async (e) => {
+        e.preventDefault();
+
+        const data = await deleteUser(user.id);
+
+        if (data.success) {
+            setUser(null);
+            cookies.remove("authToken");
+            navigate("/");
+        }
+    };
+
     return (
         <div>
             <Navbar user={user} handleSignout={handleSignout} />
@@ -97,7 +110,10 @@ export default function App() {
                     }
                 />
                 <Route path="/books/:id" element={<Books />} />
-                <Route path="/account/:id" element={<Account user={user} />} />
+                <Route
+                    path="/account/:id"
+                    element={<Account user={user} handleDeleteAccount={handleDeleteAccount} />}
+                />
             </Routes>
         </div>
     );

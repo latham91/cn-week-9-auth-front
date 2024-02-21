@@ -31,7 +31,7 @@ export default function Books() {
 
                 <div className="grid grid-cols-1 gap-3 py-10 md:grid-cols-3">
                     {!books.books ? (
-                        <div>Loading...</div>
+                        <div className="text-lg">Loading...</div>
                     ) : (
                         books.books.map((book) => {
                             return <BookCard key={book.id} book={book} />;

@@ -38,3 +38,23 @@ export async function updateUser(id, credentials) {
         return error;
     }
 }
+
+export async function deleteUser(id) {
+    try {
+        const response = await fetch(`http://localhost:5001/users/${id}`, {
+            method: "DELETE",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "http://localhost:5001",
+            },
+            credentials: "include",
+        });
+
+        const data = await response.json();
+
+        return data;
+    } catch (error) {
+        return error;
+    }
+}

@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function SignupForm({ handleSignup, errorMessage, loading }) {
     const [credentials, setCredentials] = useState({
+        name: "",
         username: "",
         email: "",
         password: "",
@@ -25,6 +26,18 @@ export default function SignupForm({ handleSignup, errorMessage, loading }) {
     return (
         <form onSubmit={(e) => handleSignup(e, credentials)} className="flex flex-col w-full gap-3 py-5">
             <div className="flex flex-col gap-1">
+                <label id="name" name="name">
+                    Name:
+                </label>
+                <input
+                    onChange={(e) => setCredentials({ ...credentials, name: e.target.value })}
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="John Doe"
+                    className="p-1 border rounded-md border-zinc-800 outline-slate-800"
+                />
+
                 <label id="username" name="username">
                     Username:
                 </label>
