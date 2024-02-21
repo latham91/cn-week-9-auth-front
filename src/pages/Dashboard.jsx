@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { fetchUsers } from "../utils/fetchUsers";
 import PropTypes from "prop-types";
 import Container from "../components/Container";
-import { useEffect, useState } from "react";
-import { fetchUsers } from "../utils/fetchUsers";
 import UserCard from "../components/UserCard";
 
 export default function Dashboard({ user }) {

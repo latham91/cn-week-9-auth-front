@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 export default function SigninForm({ handleSignin, errorMessage, loading }) {
     const [credentials, setCredentials] = useState({

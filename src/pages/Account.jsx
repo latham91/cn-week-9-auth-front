@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
-import Container from "../components/Container";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { updateUser } from "../utils/fetchUsers";
 import PropTypes from "prop-types";
+import Container from "../components/Container";
 
 export default function Account({ user, handleDeleteAccount }) {
     const { id } = useParams();

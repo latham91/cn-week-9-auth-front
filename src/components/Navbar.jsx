@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Container from "./Container";
-import { Link } from "react-router-dom";
 
 export default function Navbar({ user, handleSignout }) {
     return (
