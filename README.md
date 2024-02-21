@@ -2,6 +2,8 @@
 
 With persistant login using JWT tokens, basic sign in, sign up, dashboard and account pages.
 
+[Click here for the backend repo.](https://github.com/latham91/cn-week-9-auth)
+
 ## Sign in page
 
 ![sign in page](./ss1.png)
