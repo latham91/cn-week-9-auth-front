@@ -2,7 +2,18 @@ import PropTypes from "prop-types";
 import Container from "../components/Container";
 import SigninForm from "../components/SigninForm";
 
-export default function Signin({ handleSignin, errorMessage, loading }) {
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function Signin({ handleSignin, errorMessage, loading, user }) {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user) {
+            navigate("/");
+        }
+    }, [user, navigate]);
+
     return (
         <main>
             <Container>
@@ -21,4 +32,5 @@ Signin.propTypes = {
     setCredentials: PropTypes.func,
     errorMessage: PropTypes.string,
     loading: PropTypes.bool,
+    user: PropTypes.object,
 };

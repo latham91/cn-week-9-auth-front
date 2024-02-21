@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Container from "../components/Container";
 import { useEffect, useState } from "react";
 import fetchUsers from "../utils/fetchUsers";
+import UserCard from "../components/UserCard";
 
 export default function Dashboard({ user }) {
     const [users, setUsers] = useState([]);
@@ -10,7 +11,7 @@ export default function Dashboard({ user }) {
 
     useEffect(() => {
         if (!user) {
-            navigate("/signin");
+            return navigate("/signin");
         }
 
         getAllUsers();
@@ -37,16 +38,8 @@ export default function Dashboard({ user }) {
                         {!users ? (
                             <div>Loading...</div>
                         ) : (
-                            users.map((item) => {
-                                return (
-                                    <div
-                                        key={item.id}
-                                        className="flex flex-col gap-3 p-3 border rounded-md border-zinc-800"
-                                    >
-                                        <h2 className="text-2xl font-bold">{item.username}</h2>
-                                        <p className="text-lg">{item.email}</p>
-                                    </div>
-                                );
+                            users.map((author) => {
+                                return <UserCard key={author.id} author={author} />;
                             })
                         )}
                     </div>

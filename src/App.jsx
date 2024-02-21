@@ -8,6 +8,7 @@ import Cookies from "universal-cookie";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUpFetch, signInFetch, verifyUser } from "./utils/useAuth";
+import Books from "./pages/Books";
 
 export default function App() {
     const navigate = useNavigate();
@@ -22,12 +23,10 @@ export default function App() {
             const data = await verifyUser();
 
             if (!data.success) {
-                navigate("/signin");
                 return;
             }
 
             setUser(data.user);
-            navigate("/");
         };
 
         fetchUser();
@@ -76,7 +75,7 @@ export default function App() {
     const handleSignout = () => {
         setUser(null);
         cookies.remove("authToken");
-        navigate("/signin");
+        navigate("/");
     };
 
     return (
@@ -86,12 +85,17 @@ export default function App() {
                 <Route path="/" element={<Dashboard user={user} />} />
                 <Route
                     path="/signup"
-                    element={<Signup errorMessage={errorMessage} loading={loading} handleSignup={handleSignup} />}
+                    element={
+                        <Signup errorMessage={errorMessage} loading={loading} handleSignup={handleSignup} user={user} />
+                    }
                 />
                 <Route
                     path="/signin"
-                    element={<Signin errorMessage={errorMessage} loading={loading} handleSignin={handleSignin} />}
+                    element={
+                        <Signin errorMessage={errorMessage} loading={loading} handleSignin={handleSignin} user={user} />
+                    }
                 />
+                <Route path="/books/:id" element={<Books />} />
             </Routes>
         </div>
     );

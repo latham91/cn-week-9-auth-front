@@ -60,7 +60,7 @@ export default function SigninForm({ handleSignin, errorMessage, loading }) {
                 {loading ? "Signing in..." : "Sign in"}
             </button>
             <span>
-                Already have an account?{" "}
+                Dont have an account?{" "}
                 <Link to="/signup" className="text-blue-500 hover:underline">
                     Sign up
                 </Link>
