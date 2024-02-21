@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { updateUser } from "../utils/fetchUsers";
 import PropTypes from "prop-types";
 import Container from "../components/Container";
 
 export default function Account({ user, handleDeleteAccount }) {
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
@@ -27,8 +28,10 @@ export default function Account({ user, handleDeleteAccount }) {
                 email: user.email,
                 password: user.password,
             });
+        } else {
+            navigate("/not-found");
         }
-    }, [user]);
+    }, [user, navigate]);
 
     const handleError = (error) => {
         setErrorMessage(error);

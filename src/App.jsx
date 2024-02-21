@@ -11,6 +11,8 @@ import Signin from "./pages/Signin";
 import Dashboard from "./pages/Dashboard";
 import Books from "./pages/Books";
 import Account from "./pages/Account";
+import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
     const navigate = useNavigate();
@@ -93,7 +95,7 @@ export default function App() {
     };
 
     return (
-        <div>
+        <div className="flex flex-col h-screen">
             <Navbar user={user} handleSignout={handleSignout} />
             <Routes>
                 <Route path="/" element={<Dashboard user={user} />} />
@@ -114,7 +116,9 @@ export default function App() {
                     path="/account/:id"
                     element={<Account user={user} handleDeleteAccount={handleDeleteAccount} />}
                 />
+                <Route path="*" element={<NotFound />} />
             </Routes>
+            <Footer />
         </div>
     );
 }

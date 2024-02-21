@@ -35,7 +35,7 @@ export default function Dashboard({ user }) {
                     <h1 className="text-5xl font-extrabold">Welcome to the Dashboard</h1>
                     <p className="text-lg">This is a list of authors that we contain information for.</p>
 
-                    <div className="grid grid-cols-1 gap-5 py-5 md:grid-cols-3 lg:grid-cols-4">
+                    <div className="grid grid-cols-1 gap-5 mt-6 border-t border-dashed py-7 border-slate-400 md:grid-cols-3">
                         {!users ? (
                             <div>Loading...</div>
                         ) : (
