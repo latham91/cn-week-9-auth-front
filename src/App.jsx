@@ -1,16 +1,16 @@
-import { Route, Routes } from "react-router-dom";
-
-import Dashboard from "./pages/Dashboard";
-import Navbar from "./components/Navbar";
-import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
-import Cookies from "universal-cookie";
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { signUpFetch, signInFetch, verifyUser } from "./utils/useAuth";
+import { deleteUser } from "./utils/fetchUsers";
+import Cookies from "universal-cookie";
+
+import Navbar from "./components/Navbar";
+import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
+import Dashboard from "./pages/Dashboard";
 import Books from "./pages/Books";
 import Account from "./pages/Account";
-import { deleteUser } from "./utils/fetchUsers";
 
 export default function App() {
     const navigate = useNavigate();
