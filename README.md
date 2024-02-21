@@ -1,10 +1,23 @@
-# React + Vite
+# Basic Auth Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+With persistant login using JWT tokens, basic sign in, sign up, dashboard and account pages.
 
-Currently, two official plugins are available:
+## Sign in page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# cn-week-9-auth-front
-# cn-week-9-auth-front
+![sign in page](./ss1.png)
+
+## Sign up page
+
+![sign up page](./ss5.png)
+
+## Main dashboard
+
+![sign up page](./ss2.png)
+
+## Authors page
+
+![sign up page](./ss3.png)
+
+## Account page
+
+![sign up page](./ss4.png)
