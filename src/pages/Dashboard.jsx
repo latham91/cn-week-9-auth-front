@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import Container from "../components/Container";
 import { useEffect, useState } from "react";
-import fetchUsers from "../utils/fetchUsers";
+import { fetchUsers } from "../utils/fetchUsers";
 import UserCard from "../components/UserCard";
 
 export default function Dashboard({ user }) {
@@ -33,6 +33,7 @@ export default function Dashboard({ user }) {
             <Container>
                 <div>
                     <h1 className="text-5xl font-extrabold">Welcome to the Dashboard</h1>
+                    <p className="text-lg">This is a list of authors that we contain information for.</p>
 
                     <div className="grid grid-cols-1 gap-5 py-5 md:grid-cols-3 lg:grid-cols-4">
                         {!users ? (

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUpFetch, signInFetch, verifyUser } from "./utils/useAuth";
 import Books from "./pages/Books";
+import Account from "./pages/Account";
 
 export default function App() {
     const navigate = useNavigate();
@@ -96,6 +97,7 @@ export default function App() {
                     }
                 />
                 <Route path="/books/:id" element={<Books />} />
+                <Route path="/account/:id" element={<Account user={user} />} />
             </Routes>
         </div>
     );

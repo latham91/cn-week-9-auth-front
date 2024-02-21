@@ -14,6 +14,9 @@ export default function Navbar({ user, handleSignout }) {
                         {user ? (
                             <div className="flex items-center gap-5">
                                 <div>Welcome, {user.username}</div>
+                                <Link to={`/account/${user.id}`}>
+                                    <button className="btn-primary">Account</button>
+                                </Link>
                                 <button onClick={handleSignout} className="btn-primary">
                                     Sign out
                                 </button>
