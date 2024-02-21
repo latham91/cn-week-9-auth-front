@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Container from "../components/Container";
 import { useParams } from "react-router-dom";
 import getBooksByAuthorId from "../utils/fetchBooks";
+import BookCard from "../components/BookCard";
 
 export default function Books() {
     const [books, setBooks] = useState([]);
@@ -33,13 +34,7 @@ export default function Books() {
                         <div>Loading...</div>
                     ) : (
                         books.books.map((book) => {
-                            return (
-                                <div key={book.id} className="p-3 border rounded-md border-zinc-800">
-                                    <h2 className="text-2xl font-bold">{book.title}</h2>
-                                    <p className="text-lg">{book.author}</p>
-                                    <p className="text-lg">{book.genre}</p>
-                                </div>
-                            );
+                            return <BookCard key={book.id} book={book} />;
                         })
                     )}
                 </div>
