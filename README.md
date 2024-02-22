@@ -10,11 +10,11 @@ With persistant login using JWT tokens, basic sign in, sign up, dashboard and ac
 
 ## Sign up page
 
-![sign up page](./ss5.png)
+![sign up page](./ss2.png)
 
 ## Main dashboard
 
-![sign up page](./ss2.png)
+![sign up page](./ss4.png)
 
 ## Authors page
 
@@ -22,4 +22,4 @@ With persistant login using JWT tokens, basic sign in, sign up, dashboard and ac
 
 ## Account page
 
-![sign up page](./ss4.png)
+![sign up page](./ss5.png)
