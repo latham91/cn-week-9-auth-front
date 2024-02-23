@@ -12,6 +12,10 @@ export default function BookCard({ book }) {
                 <span className="mr-2 font-semibold">Genre: </span>
                 {book.genre}
             </p>
+            <div className="mt-5">
+                <p className="text-lg font-semibold">Cover Image:</p>
+                <img src={book.image} alt={book.title} className="w-full h-full" />
+            </div>
         </div>
     );
 }
